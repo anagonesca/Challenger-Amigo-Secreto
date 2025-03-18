@@ -33,4 +33,21 @@ function agregarAmigo() {
     // Limpiar el input y enfocarlo
     inputAmigo.value = "";
     inputAmigo.focus();
+    // Renderizar la lista actualizada
+    renderizarLista();
+}
+
+// Función para renderizar la lista de amigos
+function renderizarLista() {
+    // Obtener el elemento de la lista
+    let listaElementos = document.getElementById("listaAmigos");
+    listaElementos.innerHTML = "";
+
+    // Iterar sobre la lista de amigos y agregar cada uno como un item
+    listaDeAmigos.forEach((amigo) => {
+        let item = document.createElement("li");
+        item.textContent = amigo;
+        listaElementos.appendChild(item);
+    });
+}
 
