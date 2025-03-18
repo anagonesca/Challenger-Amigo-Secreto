@@ -50,4 +50,24 @@ function renderizarLista() {
         listaElementos.appendChild(item);
     });
 }
+// Función para sortear un amigo
+function sortearAmigo() {
+    // Validar si la lista está vacía
+    if (listaDeAmigos.length === 0) {
+        alert("No hay amigos para sortear");
+        return;
+    }
+
+    // Generar un índice aleatorio para sortear un amigo
+    let indiceSorteado = Math.floor(Math.random() * listaDeAmigos.length);
+    let amigoSorteado = listaDeAmigos[indiceSorteado];
+
+    // Mostrar el resultado del sorteo
+    let resultado = document.getElementById("resultado");
+    resultado.innerHTML = `El amigo sorteado es: <strong>${amigoSorteado}</strong>`;
+
+    // Limpiar la lista
+    listaDeAmigos = [];
+    renderizarLista();
+}
 
